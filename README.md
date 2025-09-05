@@ -1,2 +1,3 @@
 # git
-just a demo for learning git and github
+Just a demo for learning git and GitHub
+harsh uppal
