@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Civic Issue Reporter MVP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="container">
+        <header class="app-header">
+            <h1>Civic Issue Reporter</h1>
+            <p class="subtitle">AI-Powered Community Monitoring</p>
+        </header>
+
+        <!-- Upload Section -->
+        <div id="upload-section" class="card">
+            <h2>Report an Incident</h2>
+            <p>Upload a photo of a civic issue like potholes, garbage dumps, or traffic congestion.</p>
+            <input type="file" id="image-upload" accept="image/*" style="display: none;">
+            <button id="upload-button" class="btn">Upload Image</button>
+            <div id="loading-spinner" class="spinner" style="display: none;"></div>
+        </div>
+
+        <!-- Dashboard Section (Initially Hidden) -->
+        <div id="dashboard" class="card" style="display: none;">
+            <h2>Analysis Report</h2>
+            <div class="dashboard-content">
+                <div class="image-container">
+                    <img id="uploaded-image" src="#" alt="Uploaded Incident Image">
+                </div>
+                <div class="results-container">
+                    <h3>Classification Details</h3>
+                    <div class="result-item">
+                        <span class="label">Severity:</span>
+                        <span id="severity-output" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Location (GPS):</span>
+                        <span id="location-output" class="value"></span>
+                    </div>
+                    <hr>
+                    <h3>Recommended Action</h3>
+                    <div class="action-item">
+                        <p id="action-output"></p>
+                    </div>
+                    <button id="reset-button" class="btn btn-secondary">Report Another Incident</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
